@@ -19,12 +19,13 @@
       <div class="row">
         <div class="col">
           <mat-radio-group formControlName="status">
-            <mat-radio-button value="success">Success</mat-radio-button>
-            <mat-radio-button value="failed">Failed</mat-radio-button>
-            <mat-radio-button value="unknown">Unknown</mat-radio-button>
+            <mat-radio-button value="success" (click)="changeStatus('success')">Success</mat-radio-button>
+            <mat-radio-button value="failed" (click)="changeStatus('failed')">Failed</mat-radio-button>
+            <mat-radio-button value="unknown" (click)="changeStatus('unknown')">Unknown</mat-radio-button>
           </mat-radio-group>
         </div>
       </div>
+      status={{status}}
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" type="button">Scan</button>

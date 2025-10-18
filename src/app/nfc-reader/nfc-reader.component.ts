@@ -26,6 +26,7 @@ export class NfcReaderComponent implements OnInit {
   private fb = inject(FormBuilder);
   private permissionGranted = false;
   private abortController!: AbortController;
+  public status: string = '';
 
   form = this.fb.group({
     status: null,
@@ -38,6 +39,10 @@ export class NfcReaderComponent implements OnInit {
     if (permissionStatus.state === 'granted') {
       this.permissionGranted = 'NDEFReader' in window;
     }
+  }
+
+  changeStatus(status: string) {
+    this.status = status;
   }
 
   onSubmit(): void {
